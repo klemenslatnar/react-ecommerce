@@ -1,0 +1,15 @@
+.storeItemList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+@media  (max-width: 961px) {
+  .storeItemList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
