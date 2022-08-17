@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../ui/Button";
 
 import classes from "./MainNavigation.module.css";
 
@@ -11,9 +12,9 @@ function MainNavigation() {
       </Link>
       <div className={classes.right}>
         <Link to="/add-product">
-          <button className={classes.addProduct}>Add Product</button>
+          <button className={classes.addProduct}>Create Product</button>
         </Link>
-        <button className={classes.cartBtn}>Cart 🛒</button>
+        <Button />
       </div>
     </div>
   );

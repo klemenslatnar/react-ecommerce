@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./StoreItem.module.css";
 
@@ -8,10 +8,10 @@ function StoreItem(props) {
       <div className={classes.storeImg}>
         <img src={props.imageUrl} alt="" />
       </div>
-      <br />
-      <div className={classes.itemInfo}>
+      <div className={classes.info}>
         <div>{props.name}</div>
         <div>{props.price}$</div>
+        <button className={classes.addBtn}>Add To Cart</button>
       </div>
     </div>
   );

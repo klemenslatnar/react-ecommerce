@@ -51,8 +51,6 @@ export const ProductProvider = (props) => {
     getItems,
   };
 
-  console.log(products);
-
   return (
     <ProductContext.Provider value={productContext}>
       {props.children}
