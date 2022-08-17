@@ -1,18 +1,19 @@
 .storeItem {
-   margin-left: 20px; 
-   margin-top: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
   width: 300px;
-  height: 330px;
+  height: 540px;
   box-shadow: -1px -1px 32px -17px rgba(0, 0, 0, 0.75);
   background-color: rgb(255, 249, 249);
 }
 
 .storeImg {
-    width: 300px;
-    height: 250px;
+  width: 300px;
+  height: 460px;
 }
 
 .storeImg img {
+  
   width: 100%;
   height: 100%;
 }
@@ -22,5 +23,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
 }

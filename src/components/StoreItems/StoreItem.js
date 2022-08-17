@@ -2,19 +2,16 @@ import React from "react";
 
 import classes from "./StoreItem.module.css";
 
-function StoreItem() {
+function StoreItem(props) {
   return (
     <div className={classes.storeItem}>
       <div className={classes.storeImg}>
-        <img
-          src="https://images.unsplash.com/photo-1660562924547-71ba91ccc4b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        />
+        <img src={props.imageUrl} alt="" />
       </div>
       <br />
       <div className={classes.itemInfo}>
-        <div>Floaties</div>
-        <div>34.99$</div>
+        <div>{props.name}</div>
+        <div>{props.price}$</div>
       </div>
     </div>
   );

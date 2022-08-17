@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import ProductContext from "../../store/product-context";
 import StoreItem from "./StoreItem";
 
 import classes from "./StoreItemList.module.css";
 
 function StoreItemList() {
+  const productsCtx = useContext(ProductContext);
+
+  useEffect(() => {
+    productsCtx.getItems();
+  }, []);
+
   return (
     <div className={classes.storeItemList}>
-      <StoreItem />
-      <StoreItem />
-      
-
+      {productsCtx.products.map((product) => {
+        return (
+          <StoreItem
+            key={product.id}
+            name={product.name}
+            price={product.price}
+            imageUrl={product.imageUrl}
+          />
+        );
+      })}
     </div>
   );
 }
