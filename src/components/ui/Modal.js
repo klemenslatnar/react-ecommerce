@@ -4,7 +4,7 @@ import useCart from "../../store/cart-context";
 import classes from "./Modal.module.css";
 
 function Modal(props) {
-  const { total, products, orderItems } = useCart();
+  const { total, products, orderItems, removeFromCart } = useCart();
   const [order, setOrder] = useState(products);
 
   const orderHandler = () => {

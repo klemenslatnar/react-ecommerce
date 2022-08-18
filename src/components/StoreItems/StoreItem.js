@@ -1,18 +1,32 @@
-import { click } from "@testing-library/user-event/dist/click";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useCart from "../../store/cart-context";
 
 import classes from "./StoreItem.module.css";
 
 function StoreItem(props) {
-  const { name, price } = props;
+  const { name, price, id } = props;
   const { products, addToCart, removeFromCart } = useCart();
+  const [inCheckout, setInCheckout] = useState(false);
+
+  useEffect(() => {
+    const productIsInCart = products.find((product) => product.name === name);
+
+    if (productIsInCart) {
+      setInCheckout(true);
+    } else {
+      setInCheckout(false);
+    }
+  }, [products, name]);
 
   const clickHandler = () => {
-    const product = { name, price };
-    console.log(product)
+    const product = { name, price, id };
+    console.log(product);
 
-    addToCart(product);
+    if (inCheckout) {
+      removeFromCart(product);
+    } else {
+      addToCart(product);
+    }
   };
 
   return (
@@ -23,7 +37,11 @@ function StoreItem(props) {
       <div className={classes.info}>
         <div>{props.name}</div>
         <div>{props.price}$</div>
-        <button onClick={clickHandler} className={classes.addBtn}>
+        <button
+          onClick={clickHandler}
+          className={classes.addBtn}
+          style={{ backgroundColor: `${inCheckout ? "green" : "red"}` }}
+        >
           Add To Cart
         </button>
       </div>

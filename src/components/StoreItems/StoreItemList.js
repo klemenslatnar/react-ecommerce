@@ -7,15 +7,12 @@ import classes from "./StoreItemList.module.css";
 function StoreItemList() {
   const productsCtx = useContext(ProductContext);
 
-  useEffect(() => {
-    productsCtx.getItems();
-  }, []);
-
   return (
     <div className={classes.storeItemList}>
       {productsCtx.products.map((product) => {
         return (
           <StoreItem
+            id={product.id}
             key={product.id}
             name={product.name}
             price={product.price}

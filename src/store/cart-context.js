@@ -14,7 +14,10 @@ export const CartProvider = (props) => {
 
     updatePrice(updatedCart);
 
-    dispatch({ type: "ADD_TO_CART", payload: { products: updatedCart } });
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: { products: updatedCart },
+    });
   };
 
   const removeFromCart = (product) => {

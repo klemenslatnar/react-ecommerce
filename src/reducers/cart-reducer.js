@@ -8,8 +8,8 @@ export const initialState = {
 const cartReducer = (state, action) => {
   const { type, payload } = action;
 
-  if (type === "ADD_TO_CART") { 
-    console.log("ADDED_TO_CART")
+  if (type === "ADD_TO_CART") {
+    console.log("ADDED_TO_CART");
     return {
       ...state,
       products: payload.products,
@@ -30,11 +30,11 @@ const cartReducer = (state, action) => {
     };
   }
 
-  if(type === "ORDER_ITEMS") {
+  if (type === "ORDER_ITEMS") {
     return {
       ...state,
-      total: payload.total
-    }
+      total: payload.total,
+    };
   }
 
   return state;

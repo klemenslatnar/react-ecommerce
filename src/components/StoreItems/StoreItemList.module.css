@@ -7,10 +7,12 @@
   margin: 20px 40px;
 }
 
-@media  (max-width: 961px) {
+@media (max-width: 1000px) {
   .storeItemList {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+
+
