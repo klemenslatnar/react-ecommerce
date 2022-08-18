@@ -1,0 +1,14 @@
+.cartButton {
+  margin-right: 40px;
+  height: 50px;
+  width: 150px;
+  background-color: rgb(36, 156, 255);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 800;
+}
+
+.cartButton:hover {
+  cursor: pointer;
+}

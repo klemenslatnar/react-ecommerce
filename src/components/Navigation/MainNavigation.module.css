@@ -23,13 +23,8 @@
   cursor: pointer;
 }
 
-.right {
-  display: flex;
-  padding-right: 20px;
-}
-
 .addProduct {
-  margin-right: 40px;
+  margin-right: 30px;
   height: 50px;
   width: 150px;
   background-color: rgb(36, 156, 255);
@@ -41,4 +36,9 @@
 
 .addProduct:hover {
   cursor: pointer;
+}
+
+.right {
+  display: flex;
+  
 }

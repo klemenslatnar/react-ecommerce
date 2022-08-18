@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 
 const ProductContext = React.createContext({
   products: [],
@@ -24,7 +24,7 @@ export const ProductProvider = (props) => {
 
   const removeItem = (id) => {};
 
-  const getItems = useCallback(async () => {
+  const getItems = async () => {
     const response = await fetch(
       "https://react-ecommerce-e95ee-default-rtdb.europe-west1.firebasedatabase.app/products.json"
     );
@@ -37,12 +37,12 @@ export const ProductProvider = (props) => {
         id: key,
         imageUrl: data[key].imageUrl,
         name: data[key].name,
-        price: data[key].price,
+        price: Number(data[key].price),
       });
     }
 
     setProducts(loadedItems);
-  });
+  };
 
   const productContext = {
     products,

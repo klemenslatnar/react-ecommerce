@@ -17,7 +17,7 @@ function AddProduct() {
 
     const enteredImage = imageRef.current.value;
     const enteredName = nameRef.current.value;
-    const enteredPrice = priceRef.current.value;
+    const enteredPrice = Number(priceRef.current.value);
 
     const item = {
       imageUrl: enteredImage,

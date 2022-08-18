@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../ui/Button";
+import CartButton from "../ui/CartButton";
 
 import classes from "./MainNavigation.module.css";
 
@@ -11,10 +11,12 @@ function MainNavigation() {
         <button className={classes.left}>React E-Commerce</button>
       </Link>
       <div className={classes.right}>
-        <Link to="/add-product">
-          <button className={classes.addProduct}>Create Product</button>
-        </Link>
-        <Button />
+        <div className={classes.addProduct}>
+          <Link to="/add-product" className={classes.linkAddProduct}>
+            <button className={classes.addProduct}>Create Product</button>
+          </Link>
+        </div>
+        <CartButton />
       </div>
     </div>
   );
